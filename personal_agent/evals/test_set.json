@@ -1,0 +1,27 @@
+[
+    {
+        "prompt": "Where did Sai get his B.Tech degree?",
+        "expected_output": "National Institute of Technology Karnataka (NITK)",
+        "category": "factual"
+    },
+    {
+        "prompt": "When is Sai expecting to complete his MS in Computer Science?",
+        "expected_output": "May 2026",
+        "category": "factual"
+    },
+    {
+        "prompt": "What company did Sai work for between Oct 2021 and Aug 2023?",
+        "expected_output": "Bharat Electronics Limited (BEL)",
+        "category": "factual"
+    },
+    {
+        "prompt": "Does Sai have experience with LangGraph and AutoGen?",
+        "expected_output": "Yes, he built an Autonomous Multi-Agent Trading System using LangGraph and AutoGen.",
+        "category": "technical"
+    },
+    {
+        "prompt": "Can Sai build scalable ETL data pipelines?",
+        "expected_output": "Yes, he designed and deployed scalable ETL/ELT data pipelines using PySpark, Python, and SQL.",
+        "category": "technical"
+    }
+]
