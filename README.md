@@ -19,17 +19,15 @@ graph TD
     User(["User"]) --> UI["Gradio UI"]
     UI --> App["App Engine app.py"]
     
-    subgraph Agentic System
+    subgraph "Agentic System"
         App --> LG["LangGraph Orchestrator"]
-        
         LG --> LLM["OpenAI GPT-4o"]
         LG --> Tools["Tool Node"]
-        
         Tools --> T1["Profile RAG Tool"]
         Tools --> T2["Meeting Scheduler"]
         Tools --> T3["Local Bash Executor"]
-        
-        LG <--> State[("Checkpointer DB")]
+        LG --> State[("Checkpointer DB")]
+        State --> LG
     end
     
     T3 -.-> Local["Local Filesystem"]
@@ -60,10 +58,6 @@ graph TD
    OPENAI_API_KEY=sk-your-secret-key
    ```
 5. **Run the agent:**
-   ```bash
-   python app.py
-   ```
-   *Navigate to `http://localhost:7861` to interact with your agent!*
    ```bash
    python app.py
    ```
