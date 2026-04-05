@@ -14,23 +14,26 @@ Building reliable autonomous agents requires more than just API calls—it requi
 
 ## 🏗️ Architecture Diagram
 
-```mermaid
-graph TD
-    User(["User"]) --> UI["Gradio UI"]
-    UI --> App["App Engine app.py"]
-    
-    subgraph "Agentic System"
-        App --> LG["LangGraph Orchestrator"]
-        LG --> LLM["OpenAI GPT-4o"]
-        LG --> Tools["Tool Node"]
-        Tools --> T1["Profile RAG Tool"]
-        Tools --> T2["Meeting Scheduler"]
-        Tools --> T3["Local Bash Executor"]
-        LG --> State[("Checkpointer DB")]
-        State --> LG
-    end
-    
-    T3 -.-> Local["Local Filesystem"]
+```
+User → Gradio UI → App Engine (app.py)
+                        │
+          ┌─────────────▼──────────────────────────────┐
+          │              Agentic System                 │
+          │                                             │
+          │      ┌───────────────────────────────┐     │
+          │      │    LangGraph Orchestrator     │     │
+          │      │         │           │         │     │
+          │      │      GPT-4o     Tool Node     │     │
+          │      │                /    |    \    │     │
+          │      │        RAG Tool  Scheduler  Bash   │     │
+          │      │                    Executor        │     │
+          │      │      ┌─────────────────────┐  │     │
+          │      │      │   Checkpointer DB   │  │     │
+          │      │      └─────────────────────┘  │     │
+          │      └───────────────────────────────┘     │
+          └─────────────────────────────────────────────┘
+                                    │
+                              Local Filesystem
 ```
 
 ## 🚀 How to Run
