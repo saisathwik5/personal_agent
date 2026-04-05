@@ -33,7 +33,6 @@ graph TD
     end
     
     T3 -.-> Local["Local Filesystem"]
-```
 
 ## 🚀 How to Run
 
