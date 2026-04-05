@@ -19,10 +19,10 @@ graph TD
     User(["User"]) --> UI["Gradio UI"]
     UI --> App["App Engine app.py"]
     
-    subgraph Agentic_System
+    subgraph Agentic System
         App --> LG["LangGraph Orchestrator"]
         
-        LG --> LLM["OpenAI GPT-4o Edge"]
+        LG --> LLM["OpenAI GPT-4o"]
         LG --> Tools["Tool Node"]
         
         Tools --> T1["Profile RAG Tool"]
@@ -33,6 +33,7 @@ graph TD
     end
     
     T3 -.-> Local["Local Filesystem"]
+```
 
 ## 🚀 How to Run
 
@@ -59,6 +60,10 @@ graph TD
    OPENAI_API_KEY=sk-your-secret-key
    ```
 5. **Run the agent:**
+   ```bash
+   python app.py
+   ```
+   *Navigate to `http://localhost:7861` to interact with your agent!*
    ```bash
    python app.py
    ```
